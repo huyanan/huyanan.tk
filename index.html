@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>扈之家</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.rotate{
+		    -ms-transform:rotate(90deg); /* IE 9 */
+		    -moz-transform:rotate(90deg); /* Firefox */
+		    -webkit-transform:rotate(90deg); /* Safari and Chrome */
+		    -o-transform:rotate(90deg); /* Opera */
+		}　
+	</style>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?ae448139e06cf942043a0c1094c96b2c";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	
+</head>
+<body style="background: #000000;color: #ffffff;">
+	<audio autobuffer autoloop loop controls autoplay>
+		<source src="resource/music/Hooked On A Feeling.mp3">
+		<source src="resource/music/Hooked On A Feeling.mp3">
+		<object type="audio/x-wav" data="resource/music/Hooked On A Feeling.mp3" width="290" height="45">
+			<param name="src" value="resource/music/Hooked On A Feeling.mp3">
+			<param name="autoplay" value="true">
+			<param name="autoStart" value="1">
+			<p>
+				<a href="resource/music/Hooked On A Feeling.mp3">Download this audio file.</a>
+			</p>
+		</object>
+	</audio>
+	<h2>欢迎进入扈之家!</h2>
+	<p style="font-size: 30px;font-weight: bold;">史云蜣螂！</p>
+	<p>大茉茉</p>
+	<p>傻云霞非要把我的图片弄没</p>
+	<div id="gtvalidate"></div>
+	<a id="lookPic" href="javascript:void(0);" style="color:#F58E8E;">点我看隐藏掉的图片</a>
+	<div id="picture" style="width:100%;display: none;">
+		<img src="resource/image/IMG_20150520_074955.jpg" class="rotate" style="width:100%;" alt="">
+		<img src="resource/image/IMG_20150520_075009.jpg" class="rotate" style="width:100%;" alt=""></div>
+	
+	<script type="text/javascript">
+		document.getElementById('lookPic').onclick=function(){
+			document.getElementById('picture').style.display = 'block';
+		}
+	</script>
+
+	<script src="http://api.geetest.com/get.php"></script>
+
+	<script type="text/javascript">
+		var gt_captcha_obj = new window.Geetest({
+			gt:'727bd3083cba06cdf696be266f5ce987',
+			product: 'embed'
+		});
+		gt_captcha_obj.onSuccess(function(){
+			var validate = gt_captcha_obj.getValidate();
+			console.log(validate);
+			document.getElementById('picture').style.display = 'block';
+		});
+		gt_captcha_obj.appendTo('#gtvalidate');
+	</script>
+
+
+</body>
+</html>
