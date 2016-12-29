@@ -5,13 +5,88 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>扈之家</title>
 	<link rel="stylesheet" href="">
+	<!--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+	<!--<script src="//cdn.bootcss.com/jssor-slider/21.1.5/jssor.slider.min.js"></script>-->
 	<style type="text/css" media="screen">
+
+		body{}
+		h1,
+		h2{
+			color: #00CCCC;
+		}
+
+		p{
+			color: #0FF;
+		}
+
+
 		.rotate{
 		    -ms-transform:rotate(90deg); /* IE 9 */
 		    -moz-transform:rotate(90deg); /* Firefox */
 		    -webkit-transform:rotate(90deg); /* Safari and Chrome */
 		    -o-transform:rotate(90deg); /* Opera */
-		}　
+		}
+
+		canvas{
+			width:100%;
+			height:auto;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			z-index: -1;
+		}
+
+
+		.audio {
+			width: 45px;
+			position: fixed;
+			top: 65px;
+			left: 94%;
+			z-index: 100;
+			filter: alpha(opacity=30);
+			-moz-opacity: 0.3;
+			-khtml-opacity: 0.3;
+			opacity: 0.3;
+		}
+
+
+		.welcome{
+			font-size:100px;
+			text-align: center;
+		}
+	</style>
+
+	<style>
+		/* jssor slider arrow navigator skin 05 css */
+		/*
+        .jssora05l                  (normal)
+        .jssora05r                  (normal)
+        .jssora05l:hover            (normal mouseover)
+        .jssora05r:hover            (normal mouseover)
+        .jssora05l.jssora05ldn      (mousedown)
+        .jssora05r.jssora05rdn      (mousedown)
+        .jssora05l.jssora05lds      (disabled)
+        .jssora05r.jssora05rds      (disabled)
+        */
+		.jssora05l, .jssora05r {
+			display: block;
+			position: absolute;
+			/* size of arrow element */
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+			background: url('img/a17.png') no-repeat;
+			overflow: hidden;
+		}
+		.jssora05l { background-position: -10px -40px; }
+		.jssora05r { background-position: -70px -40px; }
+		.jssora05l:hover { background-position: -130px -40px; }
+		.jssora05r:hover { background-position: -190px -40px; }
+		.jssora05l.jssora05ldn { background-position: -250px -40px; }
+		.jssora05r.jssora05rdn { background-position: -310px -40px; }
+		.jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+		.jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
+		/* jssor slider thumbnail navigator skin 01 css *//*.jssort01-99-66 .p            (normal).jssort01-99-66 .p:hover      (normal mouseover).jssort01-99-66 .p.pav        (active).jssort01-99-66 .p.pdn        (mousedown)*/.jssort01-99-66 .p {    position: absolute;    top: 0;    left: 0;    width: 99px;    height: 66px;}.jssort01-99-66 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01-99-66 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01-99-66 .c {    position: absolute;    top: 0px;    left: 0px;    width: 95px;    height: 62px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01-99-66 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 95px;    height: 62px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01-99-66 .p:hover .c {    top: 0px;    left: 0px;    width: 97px;    height: 64px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01-99-66 .p.pdn .c {    background-position: 50% 50%;    width: 95px;    height: 62px;    border: #000 2px solid;}* html .jssort01-99-66 .c, * html .jssort01-99-66 .pdn .c, * html .jssort01-99-66 .pav .c {    /* ie quirks mode adjust */    width /**/: 99px;    height /**/: 66px;}
 	</style>
 
 	<script>
@@ -26,21 +101,24 @@
 	
 </head>
 <body style="background: #000000;color: #ffffff;">
-	<audio autobuffer autoloop loop controls autoplay>
-		<source src="resource/music/Hooked On A Feeling.mp3">
-		<source src="resource/music/Hooked On A Feeling.mp3">
-		<object type="audio/x-wav" data="resource/music/Hooked On A Feeling.mp3" width="290" height="45">
-			<param name="src" value="resource/music/Hooked On A Feeling.mp3">
-			<param name="autoplay" value="true">
-			<param name="autoStart" value="1">
-			<p>
-				<a href="resource/music/Hooked On A Feeling.mp3">Download this audio file.</a>
-			</p>
-		</object>
-	</audio>
-	<h2>欢迎进入扈之家!</h2>
+	<!--<audio autobuffer autoloop loop controls autoplay>-->
+		<!--<source src="resource/music/Hooked On A Feeling.mp3">-->
+		<!--<source src="resource/music/Hooked On A Feeling.mp3">-->
+		<!--<object type="audio/x-wav" data="resource/music/Hooked On A Feeling.mp3" width="290" height="45">-->
+			<!--<param name="src" value="resource/music/Hooked On A Feeling.mp3">-->
+			<!--<param name="autoplay" value="true">-->
+			<!--<param name="autoStart" value="1">-->
+			<!--<p>-->
+				<!--<a href="resource/music/Hooked On A Feeling.mp3">Download this audio file.</a>-->
+			<!--</p>-->
+		<!--</object>-->
+	<!--</audio>-->
+	<h2 class="welcome">欢迎进入扈之家!</h2>
 	<p style="font-size: 30px;font-weight: bold;">史云蜣螂！</p>
 	<p>大茉茉</p>
+
+	<img src="http://huyanan.site/resource/image/%E8%8C%89%E8%8C%89/IMG_20161222_163941.jpg" alt="" style="width:100%;">
+
 	<p>傻云霞非要把我的图片弄没</p>
 	<div id="gtvalidate"></div>
 	<a id="lookPic" href="javascript:void(0);" style="color:#F58E8E;">点我看隐藏掉的图片</a>
@@ -70,5 +148,171 @@
 	</script>
 
 
+
+	<div class="canvaszz"> </div>
+	<canvas id="canvas" width="1920" height="920"></canvas>
+	</div>
+	<div class="videozz"></div>
+	<audio id="audioPlayer" controls="true" autoplay="autoplay" class="audio">
+		<!--<source src="http://downfile.cskin.net/Wiz%20Khalifa&Charlie%20Puth-See%20You%20Again.mp3" type="audio/mp3">-->
+	</audio>
+
+	<script>
+		var playIndex = 0;
+		var mp3Arr = [
+				'http://huyanan.site/resource/music/Hooked%20On%20A%20Feeling.mp3',
+				'http://huyanan.site/resource/music/1770001654_1960249_l.mp3',
+				'http://huyanan.site/resource/music/1772309739_11065045_l.mp3',
+				'http://huyanan.site/resource/music/有声小说 - 宝贝宝贝.mp3',
+				'http://huyanan.site/resource/music/由纪子.mp3'
+		];
+
+		//打乱MP3顺序
+		var res = [];
+		for (var i = 0, len = mp3Arr.length; i < len; i++) {
+			var j = Math.floor(Math.random() * mp3Arr.length);
+			res[i] = mp3Arr[j];
+			mp3Arr.splice(j, 1);
+		}
+		console.log(res);
+
+		var audioPlayer = document.getElementById('audioPlayer');
+		audioPlayer.src = res[playIndex];
+
+
+		audioPlayer.onended = function(){
+			playIndex++;
+			if(playIndex >= res.length){
+				playIndex=0;
+			}
+			audioPlayer.src = res[playIndex];
+			audioPlayer.paused = false;
+		}
+
+	</script>
+
+	<script>
+		var imageUrl = "http://huyanan.site/resource/image/%E8%8C%89%E8%8C%89/";
+		var momo = [
+			"IMG_20161222_163916.jpg",
+			"IMG_20161222_163936.jpg",
+			"IMG_20161222_163939.jpg",
+			"IMG_20161222_163941.jpg",
+			"IMG_20161222_163943.jpg",
+			"IMG_20161222_163948.jpg",
+			"IMG_20161222_163950.jpg",
+			"IMG_20161222_163953.jpg",
+			"IMG_20161222_163958.jpg",
+			"IMG_20161222_164001.jpg",
+			"IMG_20161222_164009.jpg",
+			"IMG_20161222_164016.jpg",
+			"IMG_20161222_164021.jpg",
+			"IMG_20161222_164025.jpg",
+			"IMG_20161222_164033.jpg",
+			"IMG_20161222_164037.jpg",
+			"IMG_20161222_164208.jpg",
+			"IMG_20161222_164212.jpg",
+			"IMG_20161222_164217.jpg",
+			"IMG_20161222_164315.jpg",
+			"IMG_20161222_164324.jpg",
+			"IMG_20161222_164416.jpg",
+			"IMG_20161222_164418.jpg",
+			"IMG_20161222_164422.jpg",
+			"IMG_20161222_164426.jpg",
+			"IMG_20161222_164432.jpg",
+			"IMG_20161222_164434.jpg"
+		];
+
+	</script>
+
+	<script>
+		'use strict';
+		var canvas = document.getElementById('canvas'),
+				ctx = canvas.getContext('2d'),
+				w = canvas.width = window.innerWidth,
+				h = canvas.height = window.innerHeight,
+				hue = 217,
+				stars = [],
+				count = 0,
+				maxStars = 1300;
+		var canvas2 = document.createElement('canvas'),
+				ctx2 = canvas2.getContext('2d');
+		canvas2.width = 100;
+		canvas2.height = 100;
+		var half = canvas2.width / 2,
+				gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+		gradient2.addColorStop(0.025, '#CCC');
+		gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+		gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+		gradient2.addColorStop(1, 'transparent');
+		ctx2.fillStyle = gradient2;
+		ctx2.beginPath();
+		ctx2.arc(half, half, half, 0, Math.PI * 2);
+		ctx2.fill();
+		function random(min, max) {
+			if (arguments.length < 2) {
+				max = min;
+				min = 0;
+			}
+
+			if (min > max) {
+				var hold = max;
+				max = min;
+				min = hold;
+			}
+
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function maxOrbit(x, y) {
+			var max = Math.max(x, y),
+					diameter = Math.round(Math.sqrt(max * max + max * max));
+			return diameter / 2;
+		}
+
+		var Star = function() {
+
+			this.orbitRadius = random(maxOrbit(w, h));
+			this.radius = random(60, this.orbitRadius) / 8;
+			this.orbitX = w / 2;
+			this.orbitY = h / 2;
+			this.timePassed = random(0, maxStars);
+			this.speed = random(this.orbitRadius) / 50000;
+			this.alpha = random(2, 10) / 10;
+			count++;
+			stars[count] = this;
+		}
+
+		Star.prototype.draw = function() {
+			var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+					y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+					twinkle = random(10);
+			if (twinkle === 1 && this.alpha > 0) {
+				this.alpha -= 0.05;
+			} else if (twinkle === 2 && this.alpha < 1) {
+				this.alpha += 0.05;
+			}
+			ctx.globalAlpha = this.alpha;
+			ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+			this.timePassed += this.speed;
+		}
+
+		for (var i = 0; i < maxStars; i++) {
+			new Star();
+		}
+		function animation() {
+			ctx.globalCompositeOperation = 'source-over';
+			ctx.globalAlpha = 0.5; //尾巴
+			ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+			ctx.fillRect(0, 0, w, h)
+			ctx.globalCompositeOperation = 'lighter';
+			for (var i = 1, l = stars.length; i < l; i++) {
+				stars[i].draw();
+			};
+			window.requestAnimationFrame(animation);
+		}
+
+		animation();
+	</script>
 </body>
 </html>
